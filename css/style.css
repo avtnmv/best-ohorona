@@ -8,9 +8,6 @@
     font-family: "Inter", sans-serif;
     scroll-behavior: smooth;
 }
-html{
-  overflow-x: hidden;
-}
 
 :root {
   --color-dark: #191A23;
@@ -44,6 +41,7 @@ html{
   --transition-duration: .2s ease-in;
 
 }
+
 .is-sticky {
   position: fixed;
   top: 0;
@@ -841,20 +839,24 @@ svg{
 
 
 
+.swiper-container{
+  overflow-x: hidden;
+}
+
 
 .slide {
-    max-width: 400px;
+    max-width: 395px;
     height: 225px;
     padding: 24px;
     background: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
     transition: height 0.5s ease;
     margin: 0 auto;
     display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid #E3ECFF;
 }
 
 .stars {
