@@ -664,7 +664,7 @@ svg{
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 16px;
-  align-items: start;
+  align-items: center;
   row-gap: 97px;
 }
 
@@ -693,7 +693,7 @@ svg{
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  height: 125px;
+  height: 160px;
   background-color: #ccc;
 }
 
@@ -707,6 +707,7 @@ svg{
   margin-top: 5px;
   display: flex;
   align-items: baseline;
+  flex-direction: column;
   gap: 10px;
 }
 
