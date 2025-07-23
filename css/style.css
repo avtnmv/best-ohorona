@@ -565,7 +565,7 @@ svg{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 12px;
+  border-radius: 24px;
   max-height: 220px;
 }
 .numbers__item--yellow {
@@ -603,7 +603,11 @@ svg{
 }
 /* End of numbers section */
 
-
+.hr{
+  height: 1px;
+  width: 100%;
+  background-color: #E7E7E7;
+}
 
 /* Section workflow */
 .workflow__tabs {
@@ -1014,7 +1018,7 @@ svg{
 .promo-card__title {
   margin: 24px 16px 0;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -1103,7 +1107,7 @@ svg{
 .life__posts{
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 32px;
 }
 .life__post-content{
   display: flex;
@@ -1134,10 +1138,14 @@ svg{
 }
 
 .accordion__item {
-    border: 1px solid #e5f3fa;
-    border-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  box-shadow: 0px 3px 10px rgba(118, 118, 118, 0.12);
+  border-radius: 24px;
     overflow: hidden;
 }
+
+
 
 .accordion__header {
   padding-top: 24px;
@@ -1207,8 +1215,35 @@ footer{
   gap: 45px;
   color: white;
 }
+.footer-callout{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.footer-callout__title{
+  color: var(--color-light);
+  text-align: left !important;
+  margin-left: 0;
+  margin-bottom: 24px;
+}
 
+.footer-callout__content{
+    max-width: 610px;
+}
+.footer-callout__text{
+  font-size: 20px;
+  color: var(--color-light);
+  margin-bottom: 32px;
+}
+.footer-button{
+  max-width: 332px;
+}
+
+.footer-callout_content-second{
+  max-width: 300px;
+  width: 100%;
+}
 @media (max-width: 1220px) {  
             .promo__grid {
     display: none;
