@@ -41,6 +41,9 @@
   --transition-duration: .2s ease-in;
 
 }
+body{
+  overflow-x: hidden;
+}
 
 .is-sticky {
   position: fixed;
@@ -693,7 +696,7 @@ svg{
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  height: 160px;
+  height: 125px;
   background-color: #ccc;
 }
 
@@ -707,7 +710,6 @@ svg{
   margin-top: 5px;
   display: flex;
   align-items: baseline;
-  flex-direction: column;
   gap: 10px;
 }
 
@@ -914,6 +916,7 @@ svg{
     color: #0090FF;
     text-decoration: underline;
     cursor: pointer;
+    width: 130px;
 }
 
 .swiper-controls {
@@ -990,7 +993,7 @@ svg{
 }
 
 .promo-card {
-  width: 300px;
+  width: 290px;
   height: 390px;
   background: white;
   border-radius: 16px;
@@ -1063,6 +1066,72 @@ svg{
   justify-content: center;
 }
 
+
+
+.life__text{
+  max-width: 610px;
+  width: 100%;
+  background-image: url(../img/our-live-main.webp);
+  height: 700px;
+  padding: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 16px;
+  color: var(--color-light);
+  font-size: 14px;
+
+}
+
+.life--button{
+  border-radius: var(--border-radius-small);
+  height: 48px;
+}
+
+.life__content{
+  display: flex;
+  gap: 20px;
+}
+.life__post{
+  display: flex;
+  gap: 20px;
+}
+.life__posts{
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.life__post-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.life__date{
+  color: var(--color-gray);
+  font-weight: 300;
+}
+.life__text-main{
+  font-weight: 500;
+  font-size: 22px;
+}
+@media (max-width: 1220px) {  
+            .promo__grid {
+    display: none;
+  }
+  
+  .promo-swiper {
+    display: block;
+  }
+  
+  .promo-slider__slide {
+    width: 300px;
+  }
+  
+}
 @media (max-width: 1070px) {
     .nav__container{
         display: none;
@@ -1150,17 +1219,12 @@ svg{
             align-items: center;
             flex-direction: column;
         }
-          .promo__grid {
-    display: none;
-  }
-  
-  .promo-swiper {
-    display: block;
-  }
-  
-  .promo-slider__slide {
-    width: 300px;
-  }
+        .life__posts{
+          display: none;
+        }
+        .life__content{
+          justify-content: center;
+        }
 }
 
 @media (max-width: 730px){
@@ -1252,6 +1316,18 @@ svg{
     .promo-slider__slide {
     width: 100%;
   }
+  .workflow__text{
+      font-size: 16px;
+  max-width: 490px;
+  margin-top: 5px;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  gap: 10px;
+  }
+  .workflow__line{
+    height: 160px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1283,6 +1359,17 @@ svg{
     }
     h1{
         margin-top: 140px;
+    }
+    .life__text{
+      height: 340px;
+      background-image: url(../img/our-live-main-mobile.webp);
+      background-size: cover;
+    }
+    .life--button{
+      width: 260px;
+    }
+    .hide{
+      display: none;
     }
 }
 
