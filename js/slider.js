@@ -47,7 +47,16 @@ function initPromoSlider() {
   }
 }
 
-
+document.querySelectorAll('.read-more').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const slide = this.closest('.slide');
+        if (!slide || slide.classList.contains('expanded')) return;
+        
+        slide.classList.add('expanded');
+        slide.style.height = `${slide.scrollHeight}px`;
+        this.style.display = 'none'; // Скрываем кнопку
+    });
+});
   initPromoSlider();
   
   window.addEventListener('resize', initPromoSlider);
