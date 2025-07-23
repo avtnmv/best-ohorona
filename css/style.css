@@ -43,6 +43,7 @@
 }
 body{
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .is-sticky {
@@ -295,7 +296,7 @@ svg{
     color: #fff;
     z-index: 3;
     text-align: center;
-    background-color: #060E1E;   
+      background: linear-gradient(145.55deg, #1B2A41 20.7%, #345678 80.01%);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     pointer-events: none;
@@ -1118,6 +1119,96 @@ svg{
   font-weight: 500;
   font-size: 22px;
 }
+
+
+
+
+
+
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.accordion__item {
+    border: 1px solid #e5f3fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.accordion__header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    font-size: 22px;
+}
+
+.accordion__header::before,
+.accordion__header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion__header::before {
+  transform: translateY(-50%);
+}
+
+.accordion__header::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.accordion__header.active::after {
+  opacity: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+.accordion__item .accordion__content {
+    padding-left: 32px;
+    max-height: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+.accordion__content p{
+  margin-bottom: 24px;
+  color: var(--color-gray);
+  max-width: 635px;
+}
+
+
+
+footer{
+  background: linear-gradient(94.83deg, #1B2A41 0%, #345678 124.65%);
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.footer-nav{
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin-bottom: 64px;
+}
+
+.footer-nav-list{
+  display: flex;
+  gap: 45px;
+  color: white;
+}
+
+
 @media (max-width: 1220px) {  
             .promo__grid {
     display: none;
@@ -1144,7 +1235,7 @@ svg{
         margin-top: 120px;
         text-align: left;
         text-decoration: none;
-        padding-inline: 20px;
+        padding-inline: 32px;
     }
     .burger-menu ul li a{
         color: white;
@@ -1370,6 +1461,9 @@ svg{
     }
     .hide{
       display: none;
+    }
+    .accordion__header{
+      font-size: 20px;
     }
 }
 
