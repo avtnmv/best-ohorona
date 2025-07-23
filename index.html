@@ -413,7 +413,7 @@
       <section class="container section-spacing">
       <h2 class="title-spacing">Що про нас кажуть клієнти</h2>
       
-          <div class="swiper-container">
+          <div class="swiper-container reviews-swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="slide">
@@ -618,11 +618,108 @@
     </section>
 
     <section class="container section-spacing">
-      <h2 class="title-spacing">Акційні пропозиції</h2>
+  <h2 class="title-spacing">Акційні пропозиції</h2>
+  
+  <div class="promo">
+    <div class="promo__grid">
+      <div class="promo-card">
+        <img src="./img/promotion-first.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">Акція «12+1»</p>
+        <p class="promo-card__description">cплачуєте 12 місяців і <span class="bold">13-тий отримаєте в подарунок</span></p>
+      </div>
+
+      <div class="promo-card">
+        <img src="./img/promotion-second.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">Знижка 50 грн</p>
+        <p class="promo-card__description">на кожний об’єкт, клієнту, <br> який має <span class="bold">три і більше об’єкти</span></p>
+      </div>
+
+      <div class="promo-card">
+        <img src="./img/promotion-third.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">15% знижки <br> на абонплату</p>
+        <p class="promo-card__description">за охорону об’єкта пультом централізованого спостереження для учасників бойових дій за наявності посвідчення УБД</p>
+      </div>
+
+      <div class="promo-card">
+        <img src="./img/promotion-fourth.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">Акція <br> «приведи друга»</p>
+        <p class="promo-card__description">місяць безкоштовної охорони діючому клієнту, за підключення кожного нового клієнта</p>
+      </div>
+    </div>
+    
+    <!-- Мобильная/планшет версия (слайдер) -->
+    <div class="swiper-container promo-swiper">
+      <div class="swiper-wrapper">
+        <div class="promo-slider__slide swiper-slide">
+          <div class="promo-card">
+            <img src="./img/promotion-first.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">Акція «12+1»</p>
+        <p class="promo-card__description">cплачуєте 12 місяців і <span class="bold">13-тий отримаєте в подарунок</span></p>
+          </div>
+        </div>
+
+        <div class="promo-slider__slide swiper-slide">
+          <div class="promo-card">
+            <img src="./img/promotion-second.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">Знижка 50 грн</p>
+        <p class="promo-card__description">на кожний об’єкт, клієнту, <br> який має <span class="bold">три і більше об’єкти</span></p>
+          </div>
+        </div>
+
+        <div class="promo-slider__slide swiper-slide">
+          <div class="promo-card">
+            <img src="./img/promotion-third.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">15% знижки <br> на абонплату</p>
+        <p class="promo-card__description">за охорону об’єкта пультом централізованого спостереження для учасників бойових дій за наявності посвідчення УБД</p>
+          </div>
+        </div>
+
+        <div class="promo-slider__slide swiper-slide">
+          <div class="promo-card">
+            <img src="./img/promotion-fourth.webp" alt="Акція" class="promo-card__image">
+        <p class="promo-card__title">Акція <br> «приведи друга»</p>
+        <p class="promo-card__description">місяць безкоштовної охорони діючому клієнту, за підключення кожного нового клієнта</p>
+          </div>
+        </div>
+      </div>
       
+      <div class="promo-slider__controls">
+        <button class="promo-slider__button promo-slider__button--prev">
+          <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40.5" width="40" height="40" rx="5" transform="rotate(90 40.5 0)" fill="#F2F6FF"/>
+          <g clip-path="url(#clip0_393_2590)">
+          <path d="M17.8073 20.7874L25.7994 12.7954C26.3087 12.286 26.3087 11.4601 25.7994 10.9507C25.29 10.4414 24.4641 10.4414 23.9547 10.9507L15.9627 18.9428C15.4533 19.4522 15.4533 20.278 15.9627 20.7874C16.4721 21.2968 17.2979 21.2968 17.8073 20.7874Z" fill="#345678"/>
+          <path d="M25.7989 27.2034L17.8068 19.2114C17.2975 18.702 16.4716 18.702 15.9622 19.2114C15.4528 19.7208 15.4528 20.5466 15.9622 21.056L23.9543 29.0481C24.4636 29.5574 25.2895 29.5574 25.7989 29.0481C26.3083 28.5387 26.3083 27.7128 25.7989 27.2034Z" fill="#345678"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_393_2590">
+          <rect width="20" height="11.7391" fill="white" transform="matrix(0 1 -1 0 26.75 10)"/>
+          </clipPath>
+          </defs>
+          </svg>
+
+        </button>
+        <button class="promo-slider__button promo-slider__button--next">
+          <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="40" width="40" height="40" rx="5" transform="rotate(-90 0.5 40)" fill="#F2F6FF"/>
+          <g clip-path="url(#clip0_393_2597)">
+          <path d="M23.1937 19.2126L15.2016 27.2046C14.6922 27.714 14.6922 28.5399 15.2016 29.0493C15.711 29.5586 16.5369 29.5586 17.0462 29.0493L25.0383 21.0572C25.5477 20.5478 25.5477 19.722 25.0383 19.2126C24.5289 18.7032 23.703 18.7032 23.1937 19.2126Z" fill="#345678"/>
+          <path d="M15.2021 12.7966L23.1941 20.7886C23.7035 21.298 24.5294 21.298 25.0388 20.7886C25.5481 20.2792 25.5481 19.4534 25.0388 18.944L17.0467 10.9519C16.5373 10.4426 15.7115 10.4426 15.2021 10.9519C14.6927 11.4613 14.6927 12.2872 15.2021 12.7966Z" fill="#345678"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_393_2597">
+          <rect width="20" height="11.7391" fill="white" transform="matrix(0 -1 1 0 14.25 30)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
     </section>
 
-
+    <section class="container section-spacing"></section>
+      <h2 class="title-spacing">Наше життя</h2>
     </main>
 
     <script src="./js/burger-menu.js"></script>
@@ -631,5 +728,8 @@
     <script src="./js/slider.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   
+    <script>
+      
+    </script>
 </body>
 </html>
