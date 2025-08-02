@@ -79,6 +79,7 @@ h2{
     margin: auto;
     text-align: center;
     color: var(--color-blue);
+    line-height: 100%;
 }
 
 h3{
@@ -968,6 +969,11 @@ svg{
     color: #007acc;
 }
 
+/* Кнопка читати далi для мобильных устройств */
+.slide--mobile-read-more .read-more {
+    display: none;
+}
+
 .swiper-controls {
     display: flex;
     align-items: center;
@@ -1213,6 +1219,10 @@ svg{
   height: 2px;
   background-color: #000;
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion__header {
+  padding-right: 56px; /* 20px (right) + 20px (plus width) + 16px (gap) */
 }
 
 .accordion__header::before {
@@ -1767,6 +1777,11 @@ footer{
         width: 50px;
         height: 50px;
     }
+    
+    /* Показываем кнопку читати далi на мобильных устройствах */
+    .slide--mobile-read-more .read-more {
+        display: block;
+    }
     .advantages__item{
         padding: 32px 32px;
     }
@@ -1806,6 +1821,12 @@ footer{
 }
 .thanks-container{
   margin-top: 32px;
+}
+.services__image{
+  align-self: center;
+}
+.big-number {
+  font-size: 82px;
 }
 }
 
