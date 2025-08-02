@@ -1539,40 +1539,7 @@ footer{
 .color  {
   color: #707070;
 }
-.thanks-bg{
-  background-image: url(../img/thanks-bg.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.thanks-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 96px;
-}
-.thanks-title{
-  font-size: 72px;
-  margin-bottom: 16px;
-  color: white;
-}
-.thanks-subtitle{
-  max-width: 410px;
-  text-align: center;
-  color: white;
-}
-.thanks-button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-color: #fff;
-  color: var(--color-blue);
-  width: 278px;
-  height: 52px;
-  border-radius: var(--border-radius-medium);
-  margin-top: 32px;
-}
+
 @media (max-width: 730px){
     .hero__actions{
         flex-direction: column;
