@@ -52,6 +52,8 @@ body{
   left: 0;
   right: 0;
   z-index: 10000;
+  width: 100%;
+  max-width: 100%;
 }
 h1{
     font-family: "Inter Tight", sans-serif;
@@ -104,17 +106,25 @@ svg{
   overflow: hidden;
 }
 
-.header__video {
+.header__background {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/hero-img.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
+}
+
+/* Медиа-запрос для очень больших экранов */
+@media (min-width: 1920px) {
+  .header__background {
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
 .logo{
@@ -285,6 +295,33 @@ svg{
 
 /* End of herosection */
 
+/* Кнопка чат-бота */
+.chat-bot-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background-color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/*  */
+
+/* Hover эффект только для устройств с поддержкой hover (не мобильные) */
+@media (hover: hover) {
+  .chat-bot-button:hover {
+    transform: translateY(-5px);
+  }
+}
+
+
 
 /* Burger-menu */
 .burger-menu {
@@ -329,7 +366,7 @@ svg{
     color: #fff;
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 20px;
     transform: translateY(-50%);
     z-index: 3;
     display: none;
@@ -867,9 +904,9 @@ svg{
     transition: height 0.5s ease;
     margin: 0 auto;
     display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #E3ECFF;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #E3ECFF;
 }
 
 .stars {
@@ -889,11 +926,13 @@ svg{
     -webkit-box-orient: vertical;
     overflow: hidden;
     transition: all 0.5s ease;
+    word-wrap: break-word;
 }
 
 .slide.expanded .text {
     -webkit-line-clamp: unset;
     overflow: visible;
+    display: block;
 }
 
 .author {
@@ -922,6 +961,11 @@ svg{
     text-decoration: underline;
     cursor: pointer;
     width: 130px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #007acc;
 }
 
 .swiper-controls {
@@ -1310,8 +1354,24 @@ footer{
   
 }
 @media (max-width: 1070px) {
+    .header__background {
+        background-position: center center;
+        background-size: cover;
+    }
+    
     .nav__container{
         display: none;
+    }
+    
+    .nav-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 0;
+    }
+    
+    .nav-wrapper .container {
+        max-width: 100%;
+        padding-inline: 20px;
     }
     .burger-icon{
         display: block;
@@ -1341,9 +1401,13 @@ footer{
     .nav{
         height: fit-content;
         background-color: var(--color-light);
-        padding-inline: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-inline: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 0;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
     }
     .logo{
         z-index: 1234;
@@ -1435,7 +1499,10 @@ footer{
 
   .modal-overlay {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
@@ -1443,7 +1510,9 @@ footer{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
-    z-index: 999;
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .modal-overlay.active {
@@ -1456,10 +1525,13 @@ footer{
     border-radius: 16px;
     max-width: 488px;
     width: 100%;
+    max-height: calc(100vh - 40px);
     padding: 32px;
     position: relative;
     transform: scale(0.95);
     transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-sizing: border-box;
   }
 
   .modal-overlay.active .modal {
@@ -1541,9 +1613,23 @@ footer{
 }
 
 @media (max-width: 730px){
+    .header__background {
+        background-position: center center;
+        background-size: cover;
+    }
+    
     .hero__actions{
         flex-direction: column;
         gap: 16px;
+    }
+    
+    .modal-overlay {
+        padding: 20px;
+    }
+    
+    .modal {
+        max-height: calc(100vh - 40px);
+        padding: 28px;
     }
     .services__card{
         flex-direction: column;
@@ -1664,6 +1750,23 @@ footer{
         height: auto;
         padding-bottom: 64px;
     }
+    
+    .header__background {
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    .chat-bot-button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .chat-bot-button svg {
+        width: 50px;
+        height: 50px;
+    }
     .advantages__item{
         padding: 32px 32px;
     }
@@ -1689,10 +1792,12 @@ footer{
     }
     .modal-overlay{
       top: 90px;
-
+      padding: 20px;
     }
     .modal{
       max-width: 360px;
+      max-height: calc(100vh - 130px);
+      padding: 24px;
     }
     .thanks-title{
   font-size: 60px;

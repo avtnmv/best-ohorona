@@ -50,11 +50,19 @@ function initPromoSlider() {
 document.querySelectorAll('.read-more').forEach(btn => {
     btn.addEventListener('click', function() {
         const slide = this.closest('.slide');
-        if (!slide || slide.classList.contains('expanded')) return;
+        if (!slide) return;
         
-        slide.classList.add('expanded');
-        slide.style.height = `${slide.scrollHeight}px`;
-        this.style.display = 'none'; // Скрываем кнопку
+        if (!slide.classList.contains('expanded')) {
+            // Разворачиваем контент
+            slide.classList.add('expanded');
+            slide.style.height = `${slide.scrollHeight}px`;
+            this.textContent = 'Згорнути';
+        } else {
+            // Сворачиваем контент
+            slide.classList.remove('expanded');
+            slide.style.height = '225px'; // Возвращаем исходную высоту
+            this.textContent = 'Читати далi...';
+        }
     });
 });
   initPromoSlider();
