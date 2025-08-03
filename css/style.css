@@ -1590,6 +1590,18 @@ footer{
     box-sizing: border-box;
   }
 
+  /* Стили для поля телефона с маской */
+  .modal__form input[name="phone"] {
+    font-family: monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .modal__form input[name="phone"]::placeholder {
+    color: #999;
+    font-family: inherit;
+    letter-spacing: normal;
+  }
+
   .modal__checkbox {
     font-size: 14px;
     display: flex;

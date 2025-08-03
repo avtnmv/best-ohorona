@@ -39,7 +39,7 @@
             <li class="nav__item"><a href="#faq" class="nav__link">Часті запитання</a></li>
           </ul>
 
-          <a href="#" class="hero__button" onclick="openModal()">
+          <a href="https://best-oxorona-bot.tg.pulse.is/" class="hero__button" onclick="openModal()">
             Замовити послугу
 
             <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
           </svg>
         </a>
 
-        <a href="#" class="hero__button hero__button--secondary">
+        <a href="https://best-oxorona-bot.tg.pulse.is/" class="hero__button hero__button--secondary">
           Безкоштовна консультація
 
           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -877,7 +877,7 @@
       <div class="footer-callout__content">
         <h2 class="footer-callout__title">Вже готові подбати про свою безпеку?</h2>
         <p class="footer-callout__text">Отримайте безкоштовну консультацію прямо зараз</p>
-                <a href="#" class="hero__button hero__button--primary footer-button">
+                <a href="https://best-oxorona-bot.tg.pulse.is/" class="hero__button hero__button--primary footer-button">
           Отримати консультацію
 
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#1B2A41" xmlns="http://www.w3.org/2000/svg">
@@ -979,7 +979,7 @@
 
       <label>
         Телефон
-        <input type="tel" name="phone" required>
+        <input type="tel" name="phone" placeholder="+380 (__) ___-__-__" required>
       </label>
 
       <label>
@@ -993,7 +993,7 @@
       </label>
 
       <!-- Redirect + защита -->
-      <input type="hidden" name="_next" value="https://avtnmv.github.io/best-ohorona/thanks.html">
+      <input type="hidden" name="_next" value="https://best-oxorona.com/thanks.html">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none">
 
@@ -1008,6 +1008,8 @@
     <script src="./js/slider.js"></script>
     <script src="./js/accordion.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/imask@7.5.0/dist/imask.min.js"></script>
+
   
 <script>
   function openModal() {
@@ -1026,10 +1028,101 @@
     const modal = document.getElementById('modal');
     if (e.target === modal) closeModal();
   });
+
+  // Маска для украинского номера телефона с библиотекой IMask
+  function createPhoneMask(input) {
+    console.log('Создание маски для поля:', input);
+    
+    const mask = IMask(input, '+380 (00) 000-00-00', {
+      lazy: false,
+      placeholderChar: '_'
+    });
+    
+    console.log('Маска создана:', mask);
+
+    // Обработчик фокуса для показа маски
+    input.addEventListener('focus', function() {
+      if (this.value === '') {
+        mask.value = '+380 (__) ___-__-__';
+      }
+    });
+
+    // Обработчик для предотвращения удаления префикса +380
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace') {
+        const currentValue = mask.value;
+        const cursorPosition = input.selectionStart;
+        const selectionStart = input.selectionStart;
+        const selectionEnd = input.selectionEnd;
+        
+        // Если выделение включает префикс +380, блокируем удаление
+        if (selectionStart < 4 || selectionEnd <= 4) {
+          e.preventDefault();
+          return;
+        }
+        
+        // Если курсор находится в области префикса +380, блокируем удаление
+        if (cursorPosition <= 4) {
+          e.preventDefault();
+          return;
+        }
+      }
+    });
+
+    // Обработчик для предотвращения выделения префикса
+    input.addEventListener('mousedown', function(e) {
+      const cursorPosition = this.selectionStart;
+      if (cursorPosition < 4) {
+        e.preventDefault();
+        this.setSelectionRange(4, 4);
+      }
+    });
+
+    // Возвращаем функцию для валидации
+    return {
+      validate: function() {
+        const value = mask.value;
+        return value.length === 18 && value.includes('(') && value.includes(')');
+      },
+      getCleanValue: function() {
+        return mask.value;
+      }
+    };
+  }
+  
+  let phoneMaskInstance = null;
+  
+  function initPhoneMask() {
+    const phoneInput = document.querySelector('input[name="phone"]');
+    
+    if (phoneInput && !phoneMaskInstance && typeof IMask !== 'undefined') {
+      phoneMaskInstance = createPhoneMask(phoneInput);
+      
+      const form = document.querySelector('.modal__form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          if (!phoneMaskInstance.validate()) {
+            e.preventDefault();
+            alert('Будь ласка, введіть коректний номер телефону');
+            phoneInput.focus();
+            return false;
+          }
+        });
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initPhoneMask);
+  function openModal() {
+    document.getElementById('modal').classList.add('active');
+    setTimeout(function() {
+      console.log('Инициализация маски...');
+      initPhoneMask();
+    }, 100);
+  }
 </script>
 
-<!-- Кнопка чат-бота -->
-<a href="#" class="chat-bot-button" id="chat-bot-button">
+<a href="https://best-oxorona-bot.tg.pulse.is/" class="chat-bot-button" id="chat-bot-button">
   <svg width="60" height="60" viewBox="0 0 60 60" fill="#345678" xmlns="http://www.w3.org/2000/svg">
     <rect width="60" height="60" rx="14"/>
     <path d="M46.277 25.821c.255 1.11.39 2.263.39 3.447 0 8.81-7.463 15.953-16.667 15.953a17.3 17.3 0 0 1-3.224-.298c-.765-.144-1.148-.216-1.415-.175s-.646.242-1.403.645a10.83 10.83 0 0 1-7.04 1.095 8.8 8.8 0 0 0 1.812-3.916c.166-.884-.247-1.742-.865-2.37-2.81-2.855-4.532-6.701-4.532-10.934 0-8.543 7.017-15.519 15.834-15.935m17.5 4.167H33.333m13.334 0c0 1.167-3.324 3.348-4.167 4.167m4.167-4.167c0-1.167-3.324-3.347-4.167-4.167M29.992 30h.015m6.645 0h.015m-13.334 0h.015" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
