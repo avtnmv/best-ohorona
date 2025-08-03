@@ -1135,7 +1135,7 @@ svg{
   display: flex;
   flex-direction: column;
   justify-content: end;
-  gap: 16px;
+  gap: 20px;
   color: var(--color-light);
   font-size: 14px;
 
@@ -1852,4 +1852,8 @@ footer{
   }
 }
 
-
+.life__text-container{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
